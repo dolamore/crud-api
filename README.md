@@ -51,53 +51,6 @@ To build the multi threading project:
 npm run build:multi
 ```
 
-### Project Scripts
-
-1. **Build Scripts**:
-  - **`build:multi`**: Compiles the project with `cls.js` as the output file in production mode.
-    ```
-    OUTPUT_TYPE=cls NODE_ENV=production webpack
-    ```
-    - **OUTPUT_TYPE=cls**: Defines the output filename to `cls.js`.
-    - **NODE_ENV=production**: Sets the environment to production for optimized builds.
-
-  - **`build`**: Compiles the project with `bundle.js` as the output file (default).
-    ```
-    OUTPUT_TYPE=index webpack
-    ```
-    - **OUTPUT_TYPE=index**: Specifies the default filename for the output as `bundle.js`.
-
-2. **Start Scripts**:
-  - **`start`**: Runs the production build of the project by executing `bundle.js`.
-    ```
-    node dist/bundle.js
-    ```
-
-  - **`start:dev`**: Runs the development build using `nodemon` for automatic reloading and `bundle.js` as the output.
-    ```
-    cross-env NODE_ENV=development nodemon dist/bundle.js
-    ```
-    - **cross-env NODE_ENV=development**: Ensures the environment is set to development.
-
-  - **`start:multi`**: Runs the development build using `cls.js` as the output file.
-    ```
-    cross-env OUTPUT_TYPE=cls NODE_ENV=development nodemon dist/cls.js
-    ```
-
-  - **`start:prod`**: Builds the project and then starts the production build of `bundle.js`.
-    ```
-    npm run build && node dist/bundle.js
-    ```
-
-3. **Test Script**:
-  - **`test`**: Runs Postman tests using Newman.
-    ```
-    newman run /Users/antonbalkouski/WebstormProjects/crud-api/CrudAPI.postman_collection.json
-    ```
-
-These scripts allow you to easily switch between development and production environments, as well as between different output files (`bundle.js` or `cls.js`).
-
-
 ## Endpoints
 
 - **GET /api/users**  
